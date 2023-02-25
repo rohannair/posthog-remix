@@ -1,23 +1,22 @@
 {
-  "name": "next-use-posthog",
+  "name": "posthog-remix",
   "version": "2.0.0",
   "license": "MIT",
-  "description": "A Next.js hook for PostHog analytics",
+  "description": "A Remix hook for PostHog analytics",
   "author": {
-    "name": "Ismaaa",
-    "email": "didouhismael@gmail.com"
+    "name": "Rohan Nair",
+    "email": "rn@rohan.ai"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PostHog/posthog-nextjs"
+    "url": "https://github.com/rohannair/posthog-remix"
   },
-  "homepage": "https://github.com/PostHog/posthog-nextjs",
   "bugs": {
-    "url": "https://github.com/PostHog/posthog-nextjs/issues"
+    "url": "https://github.com/rohannair/posthog-remix/issues"
   },
   "keywords": [
     "posthog",
-    "next.js",
+    "remix",
     "react",
     "analytics",
     "react",
@@ -47,8 +46,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
-    "next": ">=9",
     "posthog-js": "^1.43.1",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.13.0"
   }
 }

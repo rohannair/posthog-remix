@@ -1,20 +1,16 @@
-import { useRouter } from 'next/router'
-import posthog, { PostHogConfig } from 'posthog-js'
-import { useEffect } from 'react'
+import { useLocation } from "@remix-run/react";
+import posthog, { PostHogConfig } from "posthog-js";
+import { useEffect } from "react";
 
-export const usePostHog = (apiKey: string, config?: Partial<PostHogConfig>, name?: string): void => {
-  const router = useRouter()
+export const usePostHog = (
+  apiKey: string,
+  config?: Partial<PostHogConfig>,
+  name?: string
+): void => {
+  const location = useLocation();
+  posthog.init(apiKey, config, name);
 
   useEffect(() => {
-    // Init PostHog
-    posthog.init(apiKey, config, name)
-
-    // Track page views
-    const handleRouteChange = () => posthog.capture('$pageview')
-    router.events.on('routeChangeComplete', handleRouteChange)
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [])
-}
+    posthog.capture("$pageview");
+  }, [location]);
+};
